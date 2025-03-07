@@ -44,6 +44,10 @@ public class Word {
     @JoinColumn(name = "lavel")
     private Lavel lavel;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "word")
+    private List<StageWord> stageword;
+
     @Override
     public String toString() {
         return "Word{" +

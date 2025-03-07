@@ -28,6 +28,12 @@ public class Stage {
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "lavel")
+    @JoinColumn(name = "laveleId")
     private List<Lavel> lavel;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "stageWordId",
+            cascade = CascadeType.ALL)
+    private List<StageWord> stage;
+
 }

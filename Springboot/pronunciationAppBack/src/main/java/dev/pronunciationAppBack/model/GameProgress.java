@@ -43,6 +43,9 @@ public class GameProgress {
     @JsonIgnore
     @OneToMany(mappedBy = "GameProgresId",
             cascade = CascadeType.ALL)
-    private List<GameProgress> gprogress;
+    private List<Stage> stage;
 
+    @ManyToOne
+    @JoinColumn(name = "GAMEPROGRES_FK")
+    private List<Stage> stages;
 }

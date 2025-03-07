@@ -27,6 +27,7 @@ public class Category {
             cascade = CascadeType.ALL)
     private List<Word> word= new ArrayList<Word>();
 
+
     private String categoryName;
     private String subCategoryName;
     private String description;
