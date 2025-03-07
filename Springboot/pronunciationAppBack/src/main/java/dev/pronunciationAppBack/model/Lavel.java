@@ -1,10 +1,10 @@
 package dev.pronunciationAppBack.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 
 @Getter
@@ -23,5 +23,14 @@ public class Lavel {
     private int requiredScore;
     private Boolean isBloked;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "lavelid",
+            cascade = CascadeType.ALL)
+    private List<Word> listWords;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "lavelid",
+            cascade = CascadeType.ALL)
+    private List<Stage> stage;
 
 }

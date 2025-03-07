@@ -1,11 +1,14 @@
 package dev.pronunciationAppBack.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import jakarta.persistence.Enumerated;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 @Getter
@@ -37,5 +40,9 @@ public class GameProgress {
     @JoinColumn(name = "user_id")
     private AppUser appUser;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "GameProgresId",
+            cascade = CascadeType.ALL)
+    private List<GameProgress> gprogress;
 
 }
