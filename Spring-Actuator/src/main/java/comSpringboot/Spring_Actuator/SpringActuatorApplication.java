@@ -10,4 +10,5 @@ public class SpringActuatorApplication {
 		SpringApplication.run(SpringActuatorApplication.class, args);
 	}
 
+
 }
